@@ -53,7 +53,6 @@ public class Enemy : MonoBehaviour
         else
         {
             transform.GetComponent<CapsuleCollider>().enabled = true;
-            transform.GetComponent<Rigidbody>().useGravity = true;
             Patrol();
             Aggro();
             CountMercyTime();
@@ -189,7 +188,6 @@ public class Enemy : MonoBehaviour
 
         bouncer.SetActive(true);
 
-        transform.GetComponent<Rigidbody>().useGravity = false;
         transform.GetComponent<CapsuleCollider>().enabled = false;
     }
 
