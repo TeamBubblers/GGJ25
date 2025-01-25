@@ -8,7 +8,7 @@ public class GroundKillsPlayer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") {
-            SceneManager.LoadScene("LoseScreen");
+            SceneManager.LoadScene("LoseScreen 1");
         }
     }
 }

@@ -2251,7 +2251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3d658d941f81a4a9ea0ff167fa2bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameScene: VladTestScene
+  GameScene: GameScene
   HowTo: {fileID: 117235071}
   credits: {fileID: 574039296}
 --- !u!1 &1890663240
