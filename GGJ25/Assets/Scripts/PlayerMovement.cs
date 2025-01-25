@@ -67,55 +67,75 @@ public class PlayerMovement : MonoBehaviour
         //currentStunTime = totalStunTime;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (!isStunned)
         {
             moveX = Input.GetAxis("Horizontal");
 
-            reloadTimer += Time.deltaTime;
-
-            coyoteTimer += Time.deltaTime;
-
             if (Input.GetKey(KeyCode.RightArrow) && grounded == true)
             {
-                /*rb.velocity = new Vector3(moveX * speed * Time.deltaTime, rb.velocity.y, rb.velocity.z);
-                this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z); */
-
-                transform.Translate(new Vector3(moveX, 0, 0) * speed * Time.deltaTime);
+                rb.velocity = new Vector3(moveX * speed, rb.velocity.y, rb.velocity.z);
                 this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z);
+
+                //transform.Translate(new Vector3(moveX, 0, 0) * speed * Time.deltaTime);
+                //this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z);
+
+
             }
 
             else if (Input.GetKey(KeyCode.LeftArrow) && grounded == true)
             {
-                /*rb.velocity = new Vector3(moveX * speed * Time.deltaTime, rb.velocity.y, rb.velocity.z);
-                this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);*/
-                transform.Translate(new Vector3(moveX, 0, 0) * speed * Time.deltaTime * -1);
+                rb.velocity = new Vector3(moveX * speed, rb.velocity.y, rb.velocity.z);
                 this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);
+                //transform.Translate(new Vector3(moveX, 0, 0) * speed * Time.deltaTime * -1);
+                //this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);
 
             }
 
             else if (Input.GetKey(KeyCode.RightArrow) && grounded == false && Jumped == true)
             {
-                transform.Translate(new Vector3(moveX, 0, 0) * speedInAir * Time.deltaTime);
+
+                rb.velocity = new Vector3(moveX * speedInAir, rb.velocity.y, rb.velocity.z);
                 this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z);
-                Debug.Log("AirMove");
+
+                //transform.Translate(new Vector3(moveX, 0, 0) * speedInAir * Time.deltaTime);
+                //this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z);
             }
 
             else if (Input.GetKey(KeyCode.LeftArrow) && grounded == false && Jumped == true)
             {
-                transform.Translate(new Vector3(moveX, 0, 0) * speedInAir * Time.deltaTime * -1);
-                this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);
-                Debug.Log("AirMove");
+
+                rb.velocity = new Vector3(moveX * speedInAir, rb.velocity.y, rb.velocity.z);
+                this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z);
+
+                //transform.Translate(new Vector3(moveX, 0, 0) * speedInAir * -1);
+                //this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);
             }
 
 
 
-            /*else if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && grounded == true && Jumped == false)
+            else if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && grounded == true && Jumped == false)
             {
                 rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
-            } */
+            }
+        }
+    }
+
+
+
+        // Update is called once per frame
+        void Update()
+    {
+        if (!isStunned)
+        {
+            
+
+            reloadTimer += Time.deltaTime;
+
+            coyoteTimer += Time.deltaTime;
+
+            
 
             if (Input.GetKeyDown(KeyCode.Z) && grounded == true && Jumped == false || Input.GetKeyDown(KeyCode.Space) && grounded == true && Jumped == false)
             {

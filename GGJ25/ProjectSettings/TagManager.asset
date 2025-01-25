@@ -7,7 +7,7 @@ TagManager:
   - Platform
   - Bullet
   - Enemy
-  - Collectible
+  - Wall
   layers:
   - Default
   - TransparentFX
