@@ -165,7 +165,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 271c10779c7fbba4c8537b5dc05979df, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ac7d322a3f0c1714799f1b920a104e18, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -504,7 +504,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 271c10779c7fbba4c8537b5dc05979df, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f4c7297453fe8064a8cf819eae028416, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1063,7 +1063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1760266730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   addSecondSong: 20
   addThirdSong: 40
   maxVolume: 1
-  fadeInSpeedDivider: 10
+  fadeInSpeedDivider: 8
 --- !u!4 &1760266731
 Transform:
   m_ObjectHideFlags: 0
@@ -1143,7 +1143,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 94ff591b75bf02449a3e7b36e0a475dc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8d09317b5b14ebd438766196e326926f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
