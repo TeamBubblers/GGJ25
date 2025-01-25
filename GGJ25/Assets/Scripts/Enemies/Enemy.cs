@@ -164,8 +164,6 @@ public class Enemy : MonoBehaviour
 
     private void GumMode()
     {
-        print("Gum time");
-
         rigidbody.velocity = new Vector3(0,0,0);
 
         if (transform.rotation.eulerAngles.y < 270 && transform.rotation.eulerAngles.y > 90)
@@ -189,6 +187,7 @@ public class Enemy : MonoBehaviour
         bouncer.SetActive(true);
 
         transform.GetComponent<CapsuleCollider>().enabled = false;
+        transform.GetChild(3).gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)
