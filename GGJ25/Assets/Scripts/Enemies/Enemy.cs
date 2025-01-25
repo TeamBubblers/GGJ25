@@ -53,7 +53,6 @@ public class Enemy : MonoBehaviour
         else
         {
             transform.GetComponent<CapsuleCollider>().enabled = true;
-            transform.GetComponent<Rigidbody>().useGravity = true;
             Patrol();
             Aggro();
             CountMercyTime();
@@ -72,12 +71,12 @@ public class Enemy : MonoBehaviour
 
         if (transform.rotation.eulerAngles.y == 90)
         {
-            rigidbody.velocity = new Vector3(patrolSpeed * Time.deltaTime, 0, 0);
+            rigidbody.velocity = new Vector3(patrolSpeed, 0, 0);
             //print("Moving right with " + rigidbody.velocity + " speed");
         }
         else if (transform.rotation.eulerAngles.y == 270)
         {
-            rigidbody.velocity = new Vector3(-1 * patrolSpeed * Time.deltaTime, 0, 0);
+            rigidbody.velocity = new Vector3(-1 * patrolSpeed, 0, 0);
             //print("Moving left with " + rigidbody.velocity + " speed");
         }
         else
@@ -148,7 +147,7 @@ public class Enemy : MonoBehaviour
         else if (playerPosition > transform.position.x)
             direction = 1;
 
-        rigidbody.velocity = new Vector3(direction * attackSpeed * Time.deltaTime, 0, 0);
+        rigidbody.velocity = new Vector3(direction * attackSpeed, 0, 0);
     }
 
     private void CountMercyTime()
@@ -189,7 +188,6 @@ public class Enemy : MonoBehaviour
 
         bouncer.SetActive(true);
 
-        transform.GetComponent<Rigidbody>().useGravity = false;
         transform.GetComponent<CapsuleCollider>().enabled = false;
     }
 
