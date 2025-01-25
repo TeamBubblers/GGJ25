@@ -21,9 +21,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject positionChecker;
     [SerializeField]
-    private GameObject bubble1;
-    [SerializeField]
-    private GameObject bubble2;
+    private GameObject bubble;
 
     private bool isReadyToMove;
     private bool isReadyToTurn;
@@ -38,8 +36,7 @@ public class Enemy : MonoBehaviour
     {
         isReadyToMove = true;
         totalTurnBuffer = 1;
-        bubble1.SetActive(false);
-        bubble2.SetActive(false);
+        bubble.SetActive(false);
     }
 
     // Update is called once per frame
@@ -165,8 +162,7 @@ public class Enemy : MonoBehaviour
     {
         rigidbody.velocity = new Vector3(0,0,0);
 
-        bubble1.SetActive(true);
-        bubble2.SetActive(true);
+        bubble.SetActive(true);
 
         transform.GetComponent<Rigidbody>().useGravity = false;
         transform.GetComponent<CapsuleCollider>().enabled = false;

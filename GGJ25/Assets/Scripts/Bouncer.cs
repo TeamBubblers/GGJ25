@@ -31,6 +31,8 @@ public class Bouncer : MonoBehaviour
             playerRB.velocity = new Vector3(playerRB.velocity.x, 0, playerRB.velocity.z);
             playerRB.AddForce(new Vector3(playerRB.velocity.x, bouncePower, playerRB.velocity.z));
             Debug.Log("Bounce");
+
+            Destroy(transform.parent.transform.parent.gameObject);
         }
     }
 }
