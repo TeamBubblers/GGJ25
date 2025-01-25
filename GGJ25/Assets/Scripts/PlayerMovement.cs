@@ -78,14 +78,20 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.RightArrow) && grounded == true)
             {
-                rb.velocity = new Vector3(moveX * speed * Time.deltaTime, rb.velocity.y, rb.velocity.z);
+                /*rb.velocity = new Vector3(moveX * speed * Time.deltaTime, rb.velocity.y, rb.velocity.z);
+                this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z); */
+
+                transform.Translate(new Vector3(moveX, 0, 0) * speed * Time.deltaTime);
                 this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z);
             }
 
             else if (Input.GetKey(KeyCode.LeftArrow) && grounded == true)
             {
-                rb.velocity = new Vector3(moveX * speed * Time.deltaTime, rb.velocity.y, rb.velocity.z);
+                /*rb.velocity = new Vector3(moveX * speed * Time.deltaTime, rb.velocity.y, rb.velocity.z);
+                this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);*/
+                transform.Translate(new Vector3(moveX, 0, 0) * speed * Time.deltaTime * -1);
                 this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);
+
             }
 
 
