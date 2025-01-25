@@ -21,7 +21,11 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject positionChecker;
     [SerializeField]
-    private GameObject bubble;
+    private GameObject bubble1;
+    [SerializeField]
+    private GameObject bubble2;
+    [SerializeField]
+    private GameObject bouncer;
 
     private bool isReadyToMove;
     private bool isReadyToTurn;
@@ -36,7 +40,9 @@ public class Enemy : MonoBehaviour
     {
         isReadyToMove = true;
         totalTurnBuffer = 1;
-        bubble.SetActive(false);
+        bubble1.SetActive(false);
+        bubble2.SetActive(false);
+        bouncer.SetActive(false);
     }
 
     // Update is called once per frame
@@ -76,7 +82,6 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-
             if (transform.rotation.eulerAngles.y < 270 && transform.rotation.eulerAngles.y > 90)
             {
                 transform.eulerAngles = new Vector3(transform.rotation.x, -90, transform.rotation.z);
@@ -160,9 +165,29 @@ public class Enemy : MonoBehaviour
 
     private void GumMode()
     {
+        print("Gum time");
+
         rigidbody.velocity = new Vector3(0,0,0);
 
-        bubble.SetActive(true);
+        if (transform.rotation.eulerAngles.y < 270 && transform.rotation.eulerAngles.y > 90)
+        {
+            transform.eulerAngles = new Vector3(transform.rotation.x, -90, transform.rotation.z);
+        }
+        else if (transform.rotation.eulerAngles.y < 90)
+            transform.eulerAngles = new Vector3(transform.rotation.x, 90, transform.rotation.z);
+
+        if (transform.rotation.eulerAngles.y == 90)
+        {
+            print("Bubble 2");
+            bubble2.SetActive(true);
+        }
+        else if (transform.rotation.eulerAngles.y == 270)
+        {
+            print("Bubble 1");
+            bubble1.SetActive(true);
+        }
+
+        bouncer.SetActive(true);
 
         transform.GetComponent<Rigidbody>().useGravity = false;
         transform.GetComponent<CapsuleCollider>().enabled = false;
