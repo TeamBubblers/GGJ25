@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 rb.velocity = new Vector3(moveX * speedInAir, rb.velocity.y, rb.velocity.z);
-                this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z);
+                this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);
 
                 //transform.Translate(new Vector3(moveX, 0, 0) * speedInAir * -1);
                 //this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);

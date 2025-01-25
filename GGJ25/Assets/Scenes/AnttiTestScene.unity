@@ -1347,7 +1347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee38324c42cdf9f4188c25426f366e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Y_Offset: 1
+  Y_Offset: 1.1
 --- !u!1001 &1020445856599009595
 PrefabInstance:
   m_ObjectHideFlags: 0
