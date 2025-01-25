@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf229b26f3092de4e80058856bd7758e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1250
+  speed: 15
   jumpPower: 400
   rb: {fileID: 4629882432889419164}
   ammoSpawnpointFront: {fileID: 7236463910505386386}
