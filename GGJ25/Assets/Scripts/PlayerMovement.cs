@@ -34,6 +34,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject bulletPrefab;
 
+    [SerializeField]
+    private float fallSpeed;
+
+    private float reloadTimer;
+
+    [SerializeField]
+    private float reloaded;
+
+    private float coyoteTimer;
+
+    [SerializeField]
+    private float coyoteMaxTime;
+
+    private bool Jumped;
+
 
 
     // Start is called before the first frame update
@@ -46,6 +61,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         moveX = Input.GetAxis("Horizontal");
+
+        reloadTimer += Time.deltaTime;
+
+        coyoteTimer += Time.deltaTime;
 
         if (Input.GetKey(KeyCode.RightArrow) && grounded == true)
         {
@@ -66,41 +85,65 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
         }
 
-        if (Input.GetKeyDown(KeyCode.Z) && grounded == true || Input.GetKeyDown(KeyCode.Space) && grounded == true)
+        if (Input.GetKeyDown(KeyCode.Z) && grounded == true && Jumped == false || Input.GetKeyDown(KeyCode.Space) && grounded == true && Jumped == false)
         {
             rb.AddForce(new Vector3(rb.velocity.x, jumpPower, rb.velocity.z));
+            coyoteTimer = 0;
+            Jumped = true;
+        }
+
+        if(reloadTimer >= reloaded)
+        {
+            if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow)
+             || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow)
+             || Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow)
+             || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow))
+            {
+                GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointDownFront.transform.position, ammoSpawnpointDownFront.transform.rotation);
+                reloadTimer = 0;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow)
+                || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow)
+                || Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow)
+                || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
+            {
+                GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointUpFront.transform.position, ammoSpawnpointUpFront.transform.rotation);
+                reloadTimer = 0;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow))
+            {
+                GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointUp.transform.position, ammoSpawnpointUp.transform.rotation);
+                reloadTimer = 0;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow))
+            {
+                GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointDown.transform.position, ammoSpawnpointDown.transform.rotation);
+                reloadTimer = 0;
+
+            }
+
+            else if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointFront.transform.position, transform.rotation);
+                reloadTimer = 0;
+            }
+            
         }
 
 
-        if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow)
-            || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow)
-            || Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow)
-            || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow))
+        
+
+        if(grounded == false && rb.velocity.y < 0)
         {
-            GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointDownFront.transform.position, ammoSpawnpointDownFront.transform.rotation);
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y - fallSpeed, rb.velocity.z);
         }
 
-        else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow)
-            || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow)
-            || Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow)
-            || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
+        if(Jumped == true && coyoteTimer > coyoteMaxTime)
         {
-            GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointUpFront.transform.position, ammoSpawnpointUpFront.transform.rotation);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow))
-        {
-            GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointUp.transform.position, ammoSpawnpointUp.transform.rotation);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow))
-        {
-            GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointDown.transform.position, ammoSpawnpointDown.transform.rotation);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointFront.transform.position, transform.rotation);
+            grounded = false;
         }
 
 
@@ -114,6 +157,8 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "Platform")
         {
             grounded = true;
+            Jumped = false;
+            
         }
     }
 
@@ -121,7 +166,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform")
         {
-            grounded = false;
+            
+            coyoteTimer = 0;
         }
     }
 }
