@@ -689,12 +689,12 @@ MonoBehaviour:
   ammoSpawnpointDownFront: {fileID: 4433354749909400257}
   ammoSpawnpointUpFront: {fileID: 7815997081853040027}
   bulletPrefab: {fileID: 5121937854446733457, guid: fcfc3b13f1bfc85458c61379d801e394, type: 3}
-  fallSpeed: 0.1
+  fallSpeed: 0.05
   reloadTimer: 0
   reloaded: 1.25
   coyoteMaxTime: 0.25
-  totalStunTime: 0
-  knockBackForce: 0
+  totalStunTime: 4
+  knockBackForce: 4
 --- !u!65 &6935953589934445730
 BoxCollider:
   m_ObjectHideFlags: 0
