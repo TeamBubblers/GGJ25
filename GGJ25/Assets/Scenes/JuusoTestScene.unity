@@ -864,7 +864,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841548625}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee38324c42cdf9f4188c25426f366e11, type: 3}
   m_Name: 
@@ -1411,6 +1411,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1571127594
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.487834
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12000188
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708617128764438866, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316767005131415598, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_Name
+      value: EnemyWrapper
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316767005131415598, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbac71fedcab84628823a5764bd4828c, type: 3}
 --- !u!1 &1670300316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,14 +1637,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3951403669203071712, guid: 87f4bb7baf3802d43896b87c27cc3895, type: 3}
-      propertyPath: attackSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951403669203071712, guid: 87f4bb7baf3802d43896b87c27cc3895, type: 3}
-      propertyPath: patrolSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5198571628899192463, guid: 87f4bb7baf3802d43896b87c27cc3895, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -1595,3 +1660,4 @@ SceneRoots:
   - {fileID: 1307423453}
   - {fileID: 275192543}
   - {fileID: 582190657}
+  - {fileID: 1571127594}
