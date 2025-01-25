@@ -679,6 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  speedInAir: 5
   jumpPower: 400
   rb: {fileID: 4629882432889419164}
   ammoSpawnpointFront: {fileID: 7236463910505386386}
