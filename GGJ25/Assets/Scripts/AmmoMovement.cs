@@ -29,7 +29,8 @@ public class AmmoMovement : MonoBehaviour
 
         if(lifeTime >= maxLifeTime)
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
+            lifeTime = 0;
         }
     }
 
@@ -37,7 +38,7 @@ public class AmmoMovement : MonoBehaviour
     {
         if(other.tag == "Platform" || other.tag == "Enemy")
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

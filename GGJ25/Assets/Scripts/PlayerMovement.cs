@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float fallSpeed;
 
+    [SerializeField]
     private float reloadTimer;
 
     [SerializeField]
@@ -99,7 +100,11 @@ public class PlayerMovement : MonoBehaviour
              || Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow)
              || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow))
             {
-                GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointDownFront.transform.position, ammoSpawnpointDownFront.transform.rotation);
+                GameObject Ammo = ObjectPool.SharedInstance.GetAmmo();
+                Ammo.transform.position = ammoSpawnpointDownFront.transform.position;
+                Ammo.transform.rotation = ammoSpawnpointDownFront.transform.rotation;
+                Ammo.transform.localScale = transform.localScale / 2;
+                Ammo.SetActive(true);
                 reloadTimer = 0;
             }
 
@@ -108,26 +113,42 @@ public class PlayerMovement : MonoBehaviour
                 || Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow)
                 || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
             {
-                GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointUpFront.transform.position, ammoSpawnpointUpFront.transform.rotation);
+                GameObject Ammo = ObjectPool.SharedInstance.GetAmmo();
+                Ammo.transform.position = ammoSpawnpointUpFront.transform.position;
+                Ammo.transform.rotation = ammoSpawnpointUpFront.transform.rotation;
+                Ammo.transform.localScale = transform.localScale / 2;
+                Ammo.SetActive(true);
                 reloadTimer = 0;
             }
 
             else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow))
             {
-                GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointUp.transform.position, ammoSpawnpointUp.transform.rotation);
+                GameObject Ammo = ObjectPool.SharedInstance.GetAmmo();
+                Ammo.transform.position = ammoSpawnpointUp.transform.position;
+                Ammo.transform.rotation = ammoSpawnpointUp.transform.rotation;
+                Ammo.transform.localScale = transform.localScale / 2;
+                Ammo.SetActive(true);
                 reloadTimer = 0;
             }
 
             else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow))
             {
-                GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointDown.transform.position, ammoSpawnpointDown.transform.rotation);
+                GameObject Ammo = ObjectPool.SharedInstance.GetAmmo();
+                Ammo.transform.position = ammoSpawnpointDown.transform.position;
+                Ammo.transform.rotation = ammoSpawnpointDown.transform.rotation;
+                Ammo.transform.localScale = transform.localScale / 2;
+                Ammo.SetActive(true);
                 reloadTimer = 0;
 
             }
 
             else if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.LeftControl))
             {
-                GameObject bullet = Instantiate(bulletPrefab, ammoSpawnpointFront.transform.position, transform.rotation);
+                GameObject Ammo = ObjectPool.SharedInstance.GetAmmo();
+                Ammo.transform.position = ammoSpawnpointFront.transform.position;
+                Ammo.transform.rotation = ammoSpawnpointFront.transform.rotation;
+                Ammo.transform.localScale = transform.localScale/2;
+                Ammo.SetActive(true);
                 reloadTimer = 0;
             }
             
