@@ -505,8 +505,8 @@ MonoBehaviour:
   playerSpotDistance: 5
   turnCheckDistanceForward: 2
   turnCheckDistanceDown: 10
-  patrolSpeed: 120
-  attackSpeed: 180
+  patrolSpeed: 5
+  attackSpeed: 10
   rigidbody: {fileID: 1144231332703774758}
   totalMercyTime: 5
   positionChecker: {fileID: 4450799093318577265}
