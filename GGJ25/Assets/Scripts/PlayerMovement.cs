@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed;
     [SerializeField]
+    private float speedInAir;
+    [SerializeField]
     private float jumpPower;
 
     private float moveX;
@@ -94,12 +96,26 @@ public class PlayerMovement : MonoBehaviour
 
             }
 
+            else if (Input.GetKey(KeyCode.RightArrow) && grounded == false && Jumped == true)
+            {
+                transform.Translate(new Vector3(moveX, 0, 0) * speedInAir * Time.deltaTime);
+                this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z);
+                Debug.Log("AirMove");
+            }
+
+            else if (Input.GetKey(KeyCode.LeftArrow) && grounded == false && Jumped == true)
+            {
+                transform.Translate(new Vector3(moveX, 0, 0) * speedInAir * Time.deltaTime * -1);
+                this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);
+                Debug.Log("AirMove");
+            }
 
 
-            else if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && grounded == true)
+
+            /*else if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && grounded == true && Jumped == false)
             {
                 rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
-            }
+            } */
 
             if (Input.GetKeyDown(KeyCode.Z) && grounded == true && Jumped == false || Input.GetKeyDown(KeyCode.Space) && grounded == true && Jumped == false)
             {
