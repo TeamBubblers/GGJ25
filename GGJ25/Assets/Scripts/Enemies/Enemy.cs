@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour
     private float totalMercyTime;
     [SerializeField]
     private GameObject positionChecker;
+    [SerializeField]
+    private GameObject bubble1;
+    [SerializeField]
+    private GameObject bubble2;
 
     private bool isReadyToMove;
     private bool isReadyToTurn;
@@ -34,14 +38,23 @@ public class Enemy : MonoBehaviour
     {
         isReadyToMove = true;
         totalTurnBuffer = 1;
+        bubble1.SetActive(false);
+        bubble2.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Patrol();
-        Aggro();
-        CountMercyTime();
+        if (isGummed)
+            GumMode();
+        else
+        {
+            transform.GetComponent<CapsuleCollider>().enabled = true;
+            transform.GetComponent<Rigidbody>().useGravity = true;
+            Patrol();
+            Aggro();
+            CountMercyTime();
+        }
 
         //print("Is ready to move: " + isReadyToMove);
         //print("Current mercy time: " + currentMercyTime);
@@ -150,7 +163,13 @@ public class Enemy : MonoBehaviour
 
     private void GumMode()
     {
+        rigidbody.velocity = new Vector3(0,0,0);
 
+        bubble1.SetActive(true);
+        bubble2.SetActive(true);
+
+        transform.GetComponent<Rigidbody>().useGravity = false;
+        transform.GetComponent<CapsuleCollider>().enabled = false;
     }
 
     private void OnCollisionEnter(Collision collision)
