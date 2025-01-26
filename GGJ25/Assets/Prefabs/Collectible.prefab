@@ -133,5 +133,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 10
-  pickUpSound: {fileID: 0}
+  pickUpSound: {fileID: 8300000, guid: 3cd9f4370ab032a408eab96b8327723d, type: 3}
   pickupEffect: {fileID: 0}
