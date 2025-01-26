@@ -2754,18 +2754,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 544945761825748670, guid: 54df17317a3007a46a5504833741c274, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3c3891261ae11894eb9cfa28864e2728, type: 3}
-    - target: {fileID: 2517158146045072335, guid: 54df17317a3007a46a5504833741c274, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a31b0971d5ae66c4e809d14d6c2d733e, type: 3}
-    - target: {fileID: 3019647883569373124, guid: 54df17317a3007a46a5504833741c274, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f471d42bb4579b548b29939e323542aa, type: 3}
     - target: {fileID: 8365102636441608454, guid: 54df17317a3007a46a5504833741c274, type: 3}
       propertyPath: m_Name
       value: MusicManager
