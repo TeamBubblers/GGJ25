@@ -984,22 +984,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5981268225324905007, guid: a45be5f6a5b520d4b93c5e3a56a80260, type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981268225324905007, guid: a45be5f6a5b520d4b93c5e3a56a80260, type: 3}
-      propertyPath: fallSpeed
-      value: 0.025
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981268225324905007, guid: a45be5f6a5b520d4b93c5e3a56a80260, type: 3}
-      propertyPath: jumpPower
-      value: 475
-      objectReference: {fileID: 0}
-    - target: {fileID: 5981268225324905007, guid: a45be5f6a5b520d4b93c5e3a56a80260, type: 3}
-      propertyPath: speedInAir
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6433284525800976821, guid: a45be5f6a5b520d4b93c5e3a56a80260, type: 3}
       propertyPath: m_Name
       value: TestPlayer

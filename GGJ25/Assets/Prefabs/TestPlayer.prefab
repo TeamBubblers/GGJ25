@@ -573,8 +573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf229b26f3092de4e80058856bd7758e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
-  jumpPower: 400
+  speed: 15
+  speedInAir: 5
+  jumpPower: 475
   rb: {fileID: 7853220630097323041}
   ammoSpawnpointFront: {fileID: 5320770365876781058}
   ammoSpawnpointUp: {fileID: 256383339037921817}
@@ -582,10 +583,12 @@ MonoBehaviour:
   ammoSpawnpointDownFront: {fileID: 2316640609431999808}
   ammoSpawnpointUpFront: {fileID: 7422007466686282019}
   bulletPrefab: {fileID: 5121937854446733457, guid: fcfc3b13f1bfc85458c61379d801e394, type: 3}
-  fallSpeed: 0.1
+  fallSpeed: 0.025
   reloadTimer: 0
   reloaded: 1.25
   coyoteMaxTime: 0.25
+  totalStunTime: 0
+  knockBackForce: 0
 --- !u!1 &7422007466686282019
 GameObject:
   m_ObjectHideFlags: 0
