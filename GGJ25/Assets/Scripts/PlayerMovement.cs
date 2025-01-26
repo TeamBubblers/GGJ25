@@ -61,10 +61,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float knockBackForce;
 
+    [SerializeField]
+    private SFX_Manager sfxManager;
+
     // Start is called before the first frame update
     void Start()
     {
         //currentStunTime = totalStunTime;
+
     }
 
     private void FixedUpdate()
@@ -142,6 +146,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(new Vector3(rb.velocity.x, jumpPower, rb.velocity.z));
                 coyoteTimer = 0;
                 Jumped = true;
+                sfxManager.PlayRandmomJumpSound();
             }
 
             if (reloadTimer >= reloaded)

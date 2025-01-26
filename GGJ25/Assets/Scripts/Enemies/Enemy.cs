@@ -106,6 +106,10 @@ public class Enemy : MonoBehaviour
             {
                 TurnAround();
             }
+            else if (hit.transform.gameObject.tag == "Enemy")
+            {
+                TurnAround();
+            }
         }
         else
             TurnAround();
