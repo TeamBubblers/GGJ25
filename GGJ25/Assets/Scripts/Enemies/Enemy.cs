@@ -9,8 +9,6 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float turnCheckDistanceForward;
     [SerializeField]
-    private float turnCheckDistanceDown;
-    [SerializeField]
     private float patrolSpeed;
     [SerializeField]
     private float attackSpeed;
