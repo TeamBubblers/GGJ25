@@ -64,6 +64,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private SFX_Manager sfxManager;
 
+    [SerializeField]
+    private AudioSource levitation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
                 //transform.Translate(new Vector3(moveX, 0, 0) * speed * Time.deltaTime);
                 //this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z);
-
+                levitation.volume = 0.5f;
 
             }
 
@@ -94,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
                 this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);
                 //transform.Translate(new Vector3(moveX, 0, 0) * speed * Time.deltaTime * -1);
                 //this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);
-
+                levitation.volume = 0.5f;
             }
 
             else if (Input.GetKey(KeyCode.RightArrow) && grounded == false && Jumped == true)
@@ -105,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
 
                 //transform.Translate(new Vector3(moveX, 0, 0) * speedInAir * Time.deltaTime);
                 //this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 0, this.transform.rotation.z);
+                levitation.volume = 0.5f;
             }
 
             else if (Input.GetKey(KeyCode.LeftArrow) && grounded == false && Jumped == true)
@@ -115,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
 
                 //transform.Translate(new Vector3(moveX, 0, 0) * speedInAir * -1);
                 //this.transform.eulerAngles = new Vector3(this.transform.rotation.x, 180, this.transform.rotation.z);
+                levitation.volume = 0.5f;
             }
 
 
@@ -122,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
             else if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && grounded == true && Jumped == false)
             {
                 rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+                levitation.volume = 0;
             }
         }
     }
