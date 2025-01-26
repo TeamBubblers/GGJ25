@@ -5,8 +5,9 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
     public int scoreValue = 10;
-    public AudioClip pickUpSound;
+    //public AudioClip pickUpSound;
     public ParticleSystem pickupEffect;
+    public AudioSource audioSource;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,21 +15,23 @@ public class Collectible : MonoBehaviour
         {
             OnPickUp(other);
             ScoreManager.Instance.AddScore(scoreValue);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
         }
     }
 
     protected virtual void OnPickUp(Collider player)
     {
-        if(pickUpSound != null)
-        {
-            AudioSource.PlayClipAtPoint(pickUpSound, transform.position);
-        }
+        //if(pickUpSound != null)
+        //{
+            audioSource.PlayOneShot(audioSource.clip);
+        //}
 
-        if(pickupEffect != null)
+        /*if(pickupEffect != null)
         {
             Instantiate(pickupEffect, transform.position, Quaternion.identity);
-        }
+        }*/
 
         Debug.Log("Collectible picked up!");
     }
