@@ -506,7 +506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpotDistance: 5
   turnCheckDistanceForward: 2
-  turnCheckDistanceDown: 10
   patrolSpeed: 5
   attackSpeed: 10
   rigidbody: {fileID: 1144231332703774758}
@@ -515,6 +514,7 @@ MonoBehaviour:
   bubble1: {fileID: 830139852500291741}
   bubble2: {fileID: 3376829641392904192}
   bouncer: {fileID: 7439505804444470646}
+  wings: {fileID: -4114139596950054218}
 --- !u!54 &1144231332703774758
 Rigidbody:
   m_ObjectHideFlags: 0
