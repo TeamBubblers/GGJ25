@@ -25,6 +25,10 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject bouncer;
 
+
+    [SerializeField]
+    private AudioSource wings;
+
     private bool isReadyToMove;
     private bool isReadyToTurn;
     private float currentMercyTime;
@@ -203,6 +207,7 @@ public class Enemy : MonoBehaviour
         if(other.gameObject.tag == "Bullet")
         {
             print("Hit by bullet, ouch");
+            wings.volume = 0;
             isGummed = true;
         }
     }

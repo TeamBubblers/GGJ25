@@ -13,6 +13,8 @@ public class AmmoMovement : MonoBehaviour
     [SerializeField]
     private float ammoSpeed;
 
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,7 @@ public class AmmoMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Platform" || other.tag == "Enemy")
+        if(other.tag == "Platform" || other.tag == "Enemy" || other.tag == "Wall")
         {
             gameObject.SetActive(false);
         }

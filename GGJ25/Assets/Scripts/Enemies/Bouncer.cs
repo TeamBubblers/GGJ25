@@ -11,7 +11,8 @@ public class Bouncer : MonoBehaviour
     [SerializeField]
     private float bouncePower;
 
-
+    [SerializeField]
+    private AudioSource bounceSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,8 @@ public class Bouncer : MonoBehaviour
     {
         if(other.tag == "Player" && playerRB.velocity.y < 0)
         {
+            bounceSFX.PlayOneShot(bounceSFX.clip);
+            Debug.Log(bounceSFX.clip.name.ToString());
             playerRB.velocity = new Vector3(playerRB.velocity.x, 0, playerRB.velocity.z);
             playerRB.AddForce(new Vector3(playerRB.velocity.x, bouncePower, playerRB.velocity.z));
             Debug.Log("Bounce");

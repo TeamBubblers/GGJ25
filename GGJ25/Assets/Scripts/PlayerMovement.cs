@@ -151,6 +151,9 @@ public class PlayerMovement : MonoBehaviour
 
             if (reloadTimer >= reloaded)
             {
+
+                
+
                 if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow)
                  || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow)
                  || Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow)
@@ -162,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
                     Ammo.transform.localScale = transform.localScale / 2;
                     Ammo.SetActive(true);
                     reloadTimer = 0;
+                    sfxManager.PlayGun();
                 }
 
                 else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow)
@@ -175,6 +179,7 @@ public class PlayerMovement : MonoBehaviour
                     Ammo.transform.localScale = transform.localScale / 2;
                     Ammo.SetActive(true);
                     reloadTimer = 0;
+                    sfxManager.PlayGun();
                 }
 
                 else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow))
@@ -185,6 +190,7 @@ public class PlayerMovement : MonoBehaviour
                     Ammo.transform.localScale = transform.localScale / 2;
                     Ammo.SetActive(true);
                     reloadTimer = 0;
+                    sfxManager.PlayGun();
                 }
 
                 else if (Input.GetKeyDown(KeyCode.X) && Input.GetKey(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow))
@@ -195,6 +201,7 @@ public class PlayerMovement : MonoBehaviour
                     Ammo.transform.localScale = transform.localScale / 2;
                     Ammo.SetActive(true);
                     reloadTimer = 0;
+                    sfxManager.PlayGun();
 
                 }
 
@@ -206,7 +213,10 @@ public class PlayerMovement : MonoBehaviour
                     Ammo.transform.localScale = transform.localScale / 2;
                     Ammo.SetActive(true);
                     reloadTimer = 0;
+                    sfxManager.PlayGun();
                 }
+
+                
 
             }
 
@@ -258,6 +268,7 @@ public class PlayerMovement : MonoBehaviour
 
             rb.velocity = new Vector3(0,0,0);
             rb.AddForce(new Vector3(direction * knockBackForce, rb.velocity.y, rb.velocity.z));
+            sfxManager.PlayEnemyHitPlayerSound();
         }
     }
 
