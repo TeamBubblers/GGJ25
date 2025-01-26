@@ -96,11 +96,10 @@ public class Enemy : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(positionChecker.transform.position, positionChecker.transform.TransformDirection(Vector3.forward), out hit, turnCheckDistanceForward) ||
-            Physics.Raycast(positionChecker.transform.position, transform.TransformDirection(Vector3.down), out hit, turnCheckDistanceDown))
+        if (Physics.Raycast(positionChecker.transform.position, positionChecker.transform.TransformDirection(Vector3.forward), out hit, turnCheckDistanceForward))
         {
             Debug.DrawRay(positionChecker.transform.position, positionChecker.transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
-            Debug.DrawRay(positionChecker.transform.position, positionChecker.transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
+            //Debug.DrawRay(positionChecker.transform.position, positionChecker.transform.TransformDirection(Vector3.down) * hit.distance, Color.green);
 
             if (hit.transform.gameObject.tag == "Wall")
             {
@@ -111,8 +110,6 @@ public class Enemy : MonoBehaviour
                 TurnAround();
             }
         }
-        else
-            TurnAround();
     }
 
     private void TurnAround()
