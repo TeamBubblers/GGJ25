@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private AudioSource wings;
 
+    [SerializeField]
+    private AudioSource HitByGum;
+
     private bool isReadyToMove;
     private bool isReadyToTurn;
     private float currentMercyTime;
@@ -208,6 +211,7 @@ public class Enemy : MonoBehaviour
         {
             print("Hit by bullet, ouch");
             wings.volume = 0;
+            HitByGum.PlayOneShot(HitByGum.clip);
             isGummed = true;
         }
     }
