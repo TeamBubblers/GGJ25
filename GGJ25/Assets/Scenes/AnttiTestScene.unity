@@ -171,10 +171,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3951403669203071712, guid: 87f4bb7baf3802d43896b87c27cc3895, type: 3}
-      propertyPath: wings
-      value: 
-      objectReference: {fileID: 544815955}
     - target: {fileID: 5198571628899192463, guid: 87f4bb7baf3802d43896b87c27cc3895, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -493,11 +489,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &544815955 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: -4114139596950054218, guid: 87f4bb7baf3802d43896b87c27cc3895, type: 3}
-  m_PrefabInstance: {fileID: 132532543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &686189867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,6 +2754,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 544945761825748670, guid: 54df17317a3007a46a5504833741c274, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c3891261ae11894eb9cfa28864e2728, type: 3}
+    - target: {fileID: 2517158146045072335, guid: 54df17317a3007a46a5504833741c274, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a31b0971d5ae66c4e809d14d6c2d733e, type: 3}
+    - target: {fileID: 3019647883569373124, guid: 54df17317a3007a46a5504833741c274, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f471d42bb4579b548b29939e323542aa, type: 3}
     - target: {fileID: 8365102636441608454, guid: 54df17317a3007a46a5504833741c274, type: 3}
       propertyPath: m_Name
       value: MusicManager
