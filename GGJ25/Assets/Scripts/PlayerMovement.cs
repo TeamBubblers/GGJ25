@@ -262,6 +262,11 @@ public class PlayerMovement : MonoBehaviour
         {
             
             coyoteTimer = 0;
+            if(rb.velocity.y < 0)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            }
+            
         }
     }
         
