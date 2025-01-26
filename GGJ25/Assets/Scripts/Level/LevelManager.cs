@@ -41,7 +41,8 @@ public class NewMonoBehaviour : MonoBehaviour
     {
         for(int i = 0; i < Sections.Count; ++i)
         {
-            int currentIndex = Random.Range(0, 1); // hardcoded for 2 prefabs per section
+            int currentIndex = Random.Range(0, 2); // hardcoded for 2 prefabs per section
+            Debug.Log(currentIndex);
             ResultSequence.Add(Sections[i][currentIndex]);
         }
     }
